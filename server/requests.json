@@ -1,0 +1,6 @@
+{
+    "options": [
+        {"GET": "curl -X GET ${url}"},
+        {"system": "uname -a"}
+    ]
+}
