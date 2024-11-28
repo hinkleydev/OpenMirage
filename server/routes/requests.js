@@ -5,6 +5,10 @@ const requests = require('../requests.json');
 
 // --- CREATE
 
+/**
+ * POST /request:request
+ * Act on a request
+ */
 router.post('/:request', (req, res) => {
     // Code
 })
