@@ -1,6 +1,7 @@
 const express = require('express')
+const { getAllOptions, getOption } = require('../modules/requests')
 const router = express.Router()
-const requests = require('../requests.json');
+
 // The best course of action might be using an external file to get this info
 
 // --- CREATE
@@ -20,7 +21,7 @@ router.post('/:request', (req, res) => {
  * Return a list of all possible requests to make
  */
 router.get('/', (req, res) => {
-    // Code
+    res.send(getAllOptions())
 })
 
 /**
@@ -28,7 +29,7 @@ router.get('/', (req, res) => {
  * Return details of a specific request and how to make it
  */
 router.get('/:request', (req, res) => {
-    // Code
+    res.send(getOption(req.params.request))
 })
 
 // --- UPDATE
