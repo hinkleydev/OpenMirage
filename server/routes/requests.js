@@ -22,7 +22,7 @@ router.post('/:request', (req, res) => {
  * Return a list of all possible requests to make
  */
 router.get('/', (req, res) => {
-    res.send(getAllOptions())
+    res.json(getAllOptions())
 })
 
 /**

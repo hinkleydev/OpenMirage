@@ -1,6 +1,6 @@
 {
     "options": [
-        {"GET": "curl -X {method} {url}"},
+        {"GET": "curl -X GET {url}"},
         {"system": "uname -a"}
     ]
 }
