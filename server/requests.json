@@ -1,6 +1,7 @@
 {
     "options": [
         {"GET": "curl -X GET {url}"},
-        {"system": "uname -a"}
+        {"system": "uname -a"},
+        {"nmap": "nmap {host} -oG - --noninteractive"}
     ]
 }
