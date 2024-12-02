@@ -2,6 +2,7 @@
     "options": [
         {"GET": "curl -X GET {url}"},
         {"system": "uname -a"},
-        {"gituser" : "curl https://api.github.com/users/{username} -s | grep -e location -e '\\\"name'"}
+        {"gituser" : "curl https://api.github.com/users/{username} -s | grep -e location -e '\\\"name'"},
+        {"nmap": "nmap {host} -oG - --noninteractive"}
     ]
 }
