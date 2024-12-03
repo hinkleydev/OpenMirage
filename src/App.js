@@ -11,8 +11,8 @@ function App() {
    * content - an object containing the response content to display to the user
    */
   const [data, setData] = useState([
-    {title: "Request #1", result: "Request successful!"},
-    {title: "Request #2", result: "Request worked! This is lots more information to make the text wrap around oh look a bird"}
+    {title: "Request #1", content: "Request successful!"},
+    {title: "Request #2", content: "Request worked! This is lots more information to make the text wrap around oh look a bird"}
   ]);
   return (
     <div className="App">
@@ -29,7 +29,7 @@ function App() {
         </div>
         <div className="cards-container">
           {data.map(function(item) {
-            return <Block key={item.key} title={item.title} content={item.result}/>;
+            return <Block key={item.key} title={item.title} content={item.content}/>;
           })}
         </div>
       </div>
