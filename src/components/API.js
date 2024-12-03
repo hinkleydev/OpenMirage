@@ -8,10 +8,13 @@ async function getOptions() {
     return json;
 }
 
-//async function getArguments(option) {
-//
-//}
+async function getArguments(option) {
+    const result = await fetch(apiUrl + "/" + option);
+    const json = await result.json();
+    return json["arguments"];
+}
 
 module.exports = {
-    getOptions
+    getOptions,
+    getArguments
 }
