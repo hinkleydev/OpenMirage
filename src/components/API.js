@@ -14,7 +14,21 @@ async function getArguments(option) {
     return json["arguments"];
 }
 
+async function performRequest(option, data) {
+    const result = await fetch(apiUrl + "/" + option, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    const json = await result.json();
+    return json;
+}
+
 module.exports = {
     getOptions,
-    getArguments
+    getArguments,
+    performRequest
 }

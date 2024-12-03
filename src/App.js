@@ -27,7 +27,7 @@ function App() {
               return <li key={item.key}>{item.title}</li>;
             })}
           </ul>
-          <Form />
+          <Form data={data} setData={setData} />
         </div>
         <div className="cards-container">
           {data.map(function(item) {
