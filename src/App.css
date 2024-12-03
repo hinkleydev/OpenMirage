@@ -15,3 +15,22 @@
 .App-link {
   color: #61dafb;
 }
+
+.content-container {
+  width: 100%;
+  display: flex;
+}
+
+.summary-container {
+  width: 20%;
+}
+
+.cards-container {
+  width: 80%;
+  background-color: grey;
+  display: flex;
+}
+
+.card {
+  background-color: darkgray;
+}

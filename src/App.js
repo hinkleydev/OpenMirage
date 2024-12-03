@@ -10,21 +10,28 @@ function App() {
    * metadata - an object of key-values pairs for information like status codes and headers
    * content - an object containing the response content to display to the user
    */
-  const [data, setData] = useState([ {
-    id: 1,
-    title: "This is a piece of data",
-    metadata: { "status" : 200 },
-    content: {"response_time" : "33ms"}
-  } ]);
+  const [data, setData] = useState([
+    {title: "Request #1", result: "Request successful!"},
+    {title: "Request #2", result: "Request worked!"}
+  ]);
   return (
     <div className="App">
       <header className="App-header">
         <h1>OpenMirage</h1>
       </header>
-      <div>
-        {data.map(function(item) {
-          return <Block id={item.key} title={item.title} metadata={item.metadata} content={item.content} />
-        })}
+      <div className="content-container">
+        <div className="summary-container">
+          <ul>
+            {data.map(function(item) {
+              return <li key={item.key}>{item.title}</li>;
+            })}
+          </ul>
+        </div>
+        <div className="cards-container">
+          {data.map(function(item) {
+            return <Block key={item.key} title={item.title}/>;
+          })}
+        </div>
       </div>
     </div>
   );

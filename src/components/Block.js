@@ -1,5 +1,5 @@
 function Block({title, metadata, content}) {
-    return (<div>
+    return (<div className="card">
         <h3>{title}</h3>
     </div>);
 }
