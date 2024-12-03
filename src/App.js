@@ -2,6 +2,7 @@ import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Block from './components/Block';
+import Form from './components/Form';
 
 function App() {
   /**
@@ -26,6 +27,7 @@ function App() {
               return <li key={item.key}>{item.title}</li>;
             })}
           </ul>
+          <Form />
         </div>
         <div className="cards-container">
           {data.map(function(item) {
