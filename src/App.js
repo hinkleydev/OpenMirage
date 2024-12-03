@@ -12,7 +12,7 @@ function App() {
    */
   const [data, setData] = useState([
     {title: "Request #1", result: "Request successful!"},
-    {title: "Request #2", result: "Request worked!"}
+    {title: "Request #2", result: "Request worked! This is lots more information to make the text wrap around oh look a bird"}
   ]);
   return (
     <div className="App">
@@ -29,7 +29,7 @@ function App() {
         </div>
         <div className="cards-container">
           {data.map(function(item) {
-            return <Block key={item.key} title={item.title}/>;
+            return <Block key={item.key} title={item.title} content={item.result}/>;
           })}
         </div>
       </div>

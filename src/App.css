@@ -7,8 +7,12 @@
   flex-direction: column;
 }
 
+.App-header {
+  height: 15vh;
+}
+
 .App-logo {
-  height: 40vmin;
+  height: 20vh;
   pointer-events: none;
 }
 
@@ -18,6 +22,7 @@
 
 .content-container {
   width: 100%;
+  height: 85vh;
   display: flex;
 }
 
@@ -27,10 +32,26 @@
 
 .cards-container {
   width: 80%;
+  height: 100%;
+  bottom: 1px;
   background-color: grey;
   display: flex;
 }
 
 .card {
   background-color: darkgray;
+  width: 18%;
+  height: 30%;
+  margin: 1%;
+  padding: 1rem;
+}
+
+.card > h3 {
+  margin: 0;
+}
+
+.result-content {
+  height: 80%;
+  overflow: auto;
+  font-size: 1.2rem;
 }
