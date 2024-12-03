@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "dev-server": "npx nodemon server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
