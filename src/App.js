@@ -23,6 +23,7 @@ function App() {
       <div className="content-container">
         <div className="summary-container">
           <ul>
+            {/* Create a short list for a summary display */}
             {data.map(function(item) {
               return <li key={item.key}>{item.title}</li>;
             })}
@@ -30,6 +31,7 @@ function App() {
           <Form data={data} setData={setData} />
         </div>
         <div className="cards-container">
+          { /* Create a list of cards for the card display */ }
           {data.map(function(item) {
             return <Block key={item.key} title={item.title} content={item.content}/>;
           })}
