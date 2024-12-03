@@ -13,6 +13,7 @@ const shell = require("shelljs")
  */
 router.post('/:request', (req, res) => {
     const requestObject = getOption(req.params.request);
+
     if (requestObject == null) {
         res.status(404).json({"error" : "item not found"})
         return;
@@ -24,6 +25,7 @@ router.post('/:request', (req, res) => {
     for(let index of expectedArguments) {
         if(req.body[index] == undefined) {
             res.status(400).json({"error" : index + " not passed"})
+            return;
         }
     } // Check all the expected arguments are there
 
@@ -33,6 +35,7 @@ router.post('/:request', (req, res) => {
         command = command.replace(formattedArguments[index], req.body[expectedArguments[index]]);
         // Replace the template strings with the request arguments
     }
+    
     const result = shell.exec(command, {silent: true}); // We can tell if something went wrong from the code here
     if (result.code == 0) {
         res.status(200).json({"result" : result.stdout});
