@@ -60,6 +60,7 @@
 
 .result-content {
   height: 80%;
-  overflow: auto;
+  white-space: pre-line;
+  overflow-y: scroll;
   font-size: 1.2rem;
 }
