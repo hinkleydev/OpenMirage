@@ -22,12 +22,14 @@ function App() {
       </header>
       <div className="content-container">
         <div className="summary-container">
-          <ul>
-            {/* Create a short list for a summary display */}
-            {data.map(function(item) {
-              return <li key={item.key}>{item.title}</li>;
-            })}
-          </ul>
+          <div className="summary-cards">
+            <ul>
+              {/* Create a short list for a summary display */}
+              {data.map(function(item) {
+                return <li key={item.key}>{item.title}</li>;
+              })}
+            </ul>
+          </div>
           <Form data={data} setData={setData} />
         </div>
         <div className="cards-container">

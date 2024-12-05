@@ -34,6 +34,16 @@
   width: 20%;
 }
 
+.summary-cards {
+  height: 70%;
+  overflow-y: scroll;
+}
+
+.add-card {
+  height: 30%;
+  overflow-y: scroll;
+}
+
 /* Contains the cards */
 
 .cards-container {
