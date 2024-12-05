@@ -11,10 +11,7 @@ function App() {
    * metadata - an object of key-values pairs for information like status codes and headers
    * content - an object containing the response content to display to the user
    */
-  const [data, setData] = useState([
-    {title: "Request #1", content: "Request successful!"},
-    {title: "Request #2", content: "Request worked! This is lots more information to make the text wrap around oh look a bird"}
-  ]);
+  const [data, setData] = useState([]); // Cards stored here
   return (
     <div className="App">
       <header className="App-header">

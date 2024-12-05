@@ -5,6 +5,7 @@ function Form({data, setData}) {
     const [commands, setCommands] = useState([]); // List of commands avaliable
     const [selectedCommand, setSelectedCommand] = useState(); // Selected command
     const [commandArguments, setArguments] = useState([]); // Command arguments
+    const [cardTitle, setCardTitle] = useState(); // Title of card
     
     // Process command data and send it to the server
     function serverRequest(formData) {
@@ -15,7 +16,9 @@ function Form({data, setData}) {
             formObject[formData.target[index].placeholder] = formData.target[index].value;
         }
         performRequest(selectedCommand, formObject).then(newCard => {
+            newCard.title = cardTitle;
             newCard.content = newCard.result;
+            setCardTitle(selectedCommand + " #" + (data.length + 2)); // Because an extra card is just about to be added to the list, we need to add one more
             setData([...data, newCard])
         })
     }
@@ -27,6 +30,7 @@ function Form({data, setData}) {
             return; // Clear arguments and return so we don't error
         }
         setSelectedCommand(option);
+        setCardTitle(option + " #" + (data.length + 1));
         getArguments(option).then((values) => {
             setArguments(values);
         })
@@ -45,7 +49,8 @@ function Form({data, setData}) {
             {commands.map(function(comand) {
                 return <option>{comand}</option>;
             })}
-        </select>
+        </select><br />
+        <input type="text" value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} /><br />
         <form onSubmit={serverRequest}>
             {/* List possible arguments */}
             {commandArguments.map(function(argument) {
