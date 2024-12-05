@@ -44,6 +44,14 @@
   overflow-y: scroll;
 }
 
+#card-title {
+  width: 90%;
+}
+
+.add-card > form > div > input {
+  width: 90%;
+}
+
 /* Contains the cards */
 
 .cards-container {

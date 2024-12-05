@@ -50,11 +50,13 @@ function Form({data, setData}) {
                 return <option>{comand}</option>;
             })}
         </select><br />
-        <input type="text" value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} /><br />
+        <label for="card-title">Card title</label>
+        <br />
+        <input id="card-title" type="text" value={cardTitle} onChange={(e) => setCardTitle(e.target.value)} /><br />
         <form onSubmit={serverRequest}>
             {/* List possible arguments */}
             {commandArguments.map(function(argument) {
-                return <input placeholder={argument}></input>
+                return <div><label for={"arg_" + argument}>{argument}</label><br /><input id={"arg_" + argument} placeholder={argument}></input></div>
             })}
             <button type="submit">Submit</button>
         </form>
