@@ -4,6 +4,7 @@
         {"system": "uname -a"},
         {"gituser" : "curl https://api.github.com/users/{username} -s | sed s/,// | grep -e location -e '\\\"name'"},
         {"echo" : "echo {first} {second} {third} {fourth} {fifth}"},
+        {"sleep":"sleep {time} && echo Done!"},
         {"nmap": "nmap {host} -oG - --noninteractive"}
     ]
 }

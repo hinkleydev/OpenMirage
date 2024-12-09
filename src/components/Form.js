@@ -15,11 +15,12 @@ function Form({data, setData}) {
         for(let index = 0; index < argumentLength; index++) {
             formObject[formData.target[index].placeholder] = formData.target[index].value;
         }
+        setData([...data, {title: cardTitle, content: "Loading..."}]);
         performRequest(selectedCommand, formObject).then(newCard => {
             newCard.title = cardTitle;
             newCard.content = newCard.result;
             setCardTitle(selectedCommand + " #" + (data.length + 2)); // Because an extra card is just about to be added to the list, we need to add one more
-            setData([...data, newCard])
+            setData([...data, newCard]);
         })
     }
 

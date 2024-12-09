@@ -118,6 +118,10 @@
   padding: 1rem;
 }
 
+.loading {
+  background-color: red;
+}
+
 .card > h3 {
   margin: 0;
 }
@@ -127,4 +131,22 @@
   white-space: pre-line;
   overflow-y: scroll;
   font-size: 1.2rem;
+}
+
+.loading-symbol {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  animation: throb 1s infinite ease-in-out;
+  margin: auto;
+}
+
+@keyframes throb {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
 }
