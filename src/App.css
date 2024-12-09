@@ -42,6 +42,10 @@
 .add-card {
   height: 30%;
   overflow-y: scroll;
+  padding: 0rem 1rem;
+  background-color: #3a3f47;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #card-title {
@@ -50,6 +54,46 @@
 
 .add-card > form > div > input {
   width: 90%;
+}
+
+.add-card select,
+.add-card input,
+.add-card button {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.add-card select {
+  background-color: #282c34;
+  color: white;
+}
+
+.add-card input {
+  background-color: #282c34;
+  color: white;
+}
+
+.add-card button {
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: pointer;
+}
+
+.add-card button:hover {
+  background-color: #21a1f1;
+}
+
+.add-card label {
+  font-size: 1em;
+  color: white;
+}
+
+.add-card form > div {
+  margin-bottom: 10px;
 }
 
 /* Contains the cards */
