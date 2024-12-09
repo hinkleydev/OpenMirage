@@ -118,10 +118,6 @@
   padding: 1rem;
 }
 
-.loading {
-  background-color: red;
-}
-
 .card > h3 {
   margin: 0;
 }
@@ -139,7 +135,7 @@
   background-color: white;
   border-radius: 50%;
   animation: throb 1s infinite ease-in-out;
-  margin: auto;
+  margin: 30% auto 0 auto;
 }
 
 @keyframes throb {
