@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Block({title, deleteCard, content}) {
+function Block({title, deleteCard, content, id}) {
     let classes = content == "Loading..." ? "loading card" : "card";
     const [viewMode, setViewMode] = useState(1); // Set the view size
     useEffect(function() {
@@ -9,7 +9,7 @@ function Block({title, deleteCard, content}) {
         }
     }, [viewMode])
 
-    return (<div className={classes} style={{width: (20 * viewMode) + "%"}}>
+    return (<div id={id} className={classes} style={{width: (20 * viewMode) + "%"}} tabIndex="-0">
         <h3>
             {title}
         </h3>

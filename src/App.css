@@ -121,6 +121,10 @@
   margin: 0;
 }
 
+.card:focus {
+  outline: white 0.1rem solid;
+}
+
 .result-content {
   height: 70%;
   white-space: pre-line;

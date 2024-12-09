@@ -17,6 +17,13 @@ function App() {
     setData(newData);
   }
 
+  function focusCard(id, event) {
+    event.preventDefault();
+    let element = document.getElementById(id);
+    console.log(element);
+    element.focus();
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -27,8 +34,8 @@ function App() {
           <div className="summary-cards">
             <ul>
               {/* Create a short list for a summary display */}
-              {data.map(function(item) {
-                return <li key={item.key}>{item.title}</li>;
+              {data.map(function(item, index) {
+                return <li key={"sum_" + index} onClick={(event) => focusCard("card_" + index, event) }>{item.title}</li>;
               })}
             </ul>
           </div>
@@ -37,7 +44,7 @@ function App() {
         <div className="cards-container">
           { /* Create a list of cards for the card display */ }
           {data.map(function(item, index) {
-            return <Block key={item.key} title={item.title} content={item.content} deleteCard={() => deleteCard(index)}/>;
+            return <Block id={"card_" + index} key={"card_" + index} title={item.title} content={item.content} deleteCard={() => deleteCard(index)}/>;
           })}
         </div>
       </div>
