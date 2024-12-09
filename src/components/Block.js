@@ -17,10 +17,10 @@ function Block({title, deleteCard, content}) {
             {content}
             {content == "Loading..." ? <div className="loading-symbol"></div> : null}
         </div>
-        <div className="viewsize">
+        <div className="card-buttons">
             <button onClick={deleteCard}>X</button> {/* Delete card */}
-            <button onClick={() => setViewMode(viewMode + 1)}>+</button> {/* Enlarge view */}
             <button onClick={() => setViewMode(viewMode - 1)}>-</button> {/* Shrink view */}
+            <button onClick={() => setViewMode(viewMode + 1)}>+</button> {/* Enlarge view */}
             <button onClick={() => setViewMode(4)}>&lt;-&gt;</button> {/* Full view */}
         </div>
     </div>);
