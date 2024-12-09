@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:4000/requests"; // I know, it's a sin, but it's only for development
+const apiUrl = "/requests"; 
 
 // Get a list of commands a user can make
 async function getCommands() {
