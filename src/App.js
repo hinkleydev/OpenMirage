@@ -12,6 +12,11 @@ function App() {
    * content - an object containing the response content to display to the user
    */
   const [data, setData] = useState([]); // Cards stored here
+  function deleteCard(index) {
+    const newData = data.filter((item, i) => i !== index);
+    setData(newData);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -31,8 +36,8 @@ function App() {
         </div>
         <div className="cards-container">
           { /* Create a list of cards for the card display */ }
-          {data.map(function(item) {
-            return <Block key={item.key} title={item.title} content={item.content}/>;
+          {data.map(function(item, index) {
+            return <Block key={item.key} title={item.title} content={item.content} deleteCard={() => deleteCard(index)}/>;
           })}
         </div>
       </div>
