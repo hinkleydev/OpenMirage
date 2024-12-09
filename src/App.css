@@ -112,7 +112,6 @@
 
 .card {
   background-color: darkgray;
-  width: 18%;
   height: 30%;
   margin: 1%;
   padding: 1rem;
@@ -123,10 +122,14 @@
 }
 
 .result-content {
-  height: 80%;
+  height: 70%;
   white-space: pre-line;
   overflow-y: scroll;
   font-size: 1.2rem;
+}
+
+.viewsize {
+  height: 10%;
 }
 
 .loading-symbol {
