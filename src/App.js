@@ -59,7 +59,7 @@ function App() {
         <div className="cards-container" style={{width: cardsWidth  + "%"}}>
           { /* Create a list of cards for the card display */ }
           {data.map(function(item, index) {
-            return <Block id={"card_" + index} key={"card_" + index} title={item.title} content={item.content} deleteCard={() => deleteCard(index)}/>;
+            return <Block id={"card_" + index} key={"card_" + index} title={item.title} content={item.content} deleteCard={() => deleteCard(index)} error={item.error}/>;
           })}
         </div>
       </div>

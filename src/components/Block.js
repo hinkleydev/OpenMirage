@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-function Block({ title, deleteCard, content, id }) {
+function Block({ title, deleteCard, content, error, id }) {
     let classes = content === "Loading..." ? "loading card" : "card";
+    classes += error ? " error" : ""; // Add error class if there is an error
     const [viewMode, setViewMode] = useState(1); // Set the view size
 
     useEffect(() => {

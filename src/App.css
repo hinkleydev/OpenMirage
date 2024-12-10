@@ -123,6 +123,10 @@
   outline: white 0.1rem solid;
 }
 
+.error {
+  border: red 2px solid;
+}
+
 .result-content {
   height: 70%;
   white-space: pre-line;
