@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Block from './components/Block';
@@ -12,6 +12,20 @@ function App() {
    * content - an object containing the response content to display to the user
    */
   const [data, setData] = useState([]); // Cards stored here
+  const [collapsed, setCollapsed] = useState(false); // Summary collapsed state
+  const [summaryWidth, setSummaryWidth] = useState(20); // Summary width
+  const [cardsWidth, setCardsWidth] = useState(80); // Cards width
+
+  useEffect(() => {
+    if (collapsed) {
+      setSummaryWidth(0);
+      setCardsWidth(100);
+    } else {
+      setSummaryWidth(20);
+      setCardsWidth(80);
+    }
+  }, [collapsed]);
+
   function deleteCard(index) {
     const newData = data.filter((item, i) => i !== index);
     setData(newData);
@@ -27,10 +41,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>OpenMirage</h1>
+        <h1 style={{margin: 0}} >OpenMirage</h1>
+        <button className="toggle-summary" onClick={() => setCollapsed(!collapsed)}>Toggle Summary</button>
       </header>
       <div className="content-container">
-        <div className="summary-container">
+        <div className="summary-container" style={{width: summaryWidth  + "%"}}>
           <div className="summary-cards">
             <ul>
               {/* Create a short list for a summary display */}
@@ -41,7 +56,7 @@ function App() {
           </div>
           <Form data={data} setData={setData} />
         </div>
-        <div className="cards-container">
+        <div className="cards-container" style={{width: cardsWidth  + "%"}}>
           { /* Create a list of cards for the card display */ }
           {data.map(function(item, index) {
             return <Block id={"card_" + index} key={"card_" + index} title={item.title} content={item.content} deleteCard={() => deleteCard(index)}/>;

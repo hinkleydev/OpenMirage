@@ -30,10 +30,6 @@
 
 /* Contains a short hand list of cards */
 
-.summary-container {
-  width: 20%;
-}
-
 .summary-cards {
   height: 70%;
   overflow-y: scroll;
@@ -99,7 +95,6 @@
 /* Contains the cards */
 
 .cards-container {
-  width: 80%;
   height: 100%;
   background-color: grey;
   display: flex;
@@ -137,7 +132,7 @@
   justify-content: left;
 }
 
-.card-buttons > button {
+.card-buttons > button, .toggle-summary {
   margin: 0 0.1rem;
   background-color: #61dafb;
   color: #282c34;
