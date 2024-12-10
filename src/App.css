@@ -108,6 +108,7 @@
 
 .card {
   background-color: darkgray;
+  padding: 0.2em;
 }
 
 .card > h3 {
