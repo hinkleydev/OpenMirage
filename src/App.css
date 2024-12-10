@@ -115,6 +115,8 @@
   margin: 0;
   text-wrap: nowrap;
   overflow-x: hidden;
+  height: 20%;
+  font-size: 1.7rem;
 }
 
 .card:focus {
