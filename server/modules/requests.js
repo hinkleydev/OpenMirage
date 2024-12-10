@@ -33,12 +33,17 @@ function getArguments(option) {
     const command = object[key]; // Get the command
     const list = command.matchAll(parameterRegex);
     const arr = Array.from(list); // This pulls the parameters from the command
-    let value; let results = [];
+    let value; 
+    let results = [];
     
     for(let item in arr) {
         value = arr[item][0]; // Convert from array to string
         results.push(value.slice(1, -1)) // Remove the brackets and add to the array
     }
+    
+    // Remove duplicates
+    results = [...new Set(results)];
+    
     return results;
 }
 

@@ -32,7 +32,8 @@ router.post('/:request', (req, res) => {
     const formattedArguments = expectedArguments.map((argument) => "{" + argument + "}" ) // Readd the brackets to parse the command
     
     for(let index = 0; index < formattedArguments.length; index++) {
-        command = command.replace(formattedArguments[index], req.body[expectedArguments[index]]);
+        const regex = new RegExp(formattedArguments[index], 'g'); // Create a global regex for the argument
+        command = command.replace(regex, req.body[expectedArguments[index]]);
         // Replace the template strings with the request arguments
     }
     
