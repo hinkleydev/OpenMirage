@@ -95,11 +95,12 @@
 /* Contains the cards */
 
 .cards-container {
-  height: 100%;
   background-color: grey;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  grid-auto-rows: 2in;
+  padding: 1em;
+  gap: 10px;
   overflow-y: scroll;
 }
 
@@ -107,13 +108,12 @@
 
 .card {
   background-color: darkgray;
-  height: 30%;
-  margin: 1%;
-  padding: 1rem;
 }
 
 .card > h3 {
   margin: 0;
+  text-wrap: nowrap;
+  overflow-x: hidden;
 }
 
 .card:focus {
