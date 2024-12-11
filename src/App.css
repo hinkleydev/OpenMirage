@@ -128,7 +128,7 @@
 }
 
 .result-content {
-  height: 70%;
+  height: 65%;
   white-space: pre-line;
   overflow-y: scroll;
   font-size: 1.2rem;
@@ -146,6 +146,8 @@
   cursor: pointer;
   border: none;
   border-radius: 5px;
+  font-weight: 800;
+  padding: 0.5vh 0.4vw;
 }
 
 .loading-symbol {
