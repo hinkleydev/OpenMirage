@@ -41,7 +41,7 @@ router.post('/:request', (req, res) => {
     if (result.code == 0) {
         res.status(200).json({"result" : result.stdout});
     } else {
-        res.status(422).json({"code" : result.code, "result" : result.stderr});
+        res.status(200).json({"code" : result.code, "result" : result.stderr});
     }
 })
 

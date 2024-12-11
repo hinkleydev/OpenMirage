@@ -1,4 +1,4 @@
-const apiUrl = "/requests"; 
+const apiUrl = "http://localhost:4000/requests"; 
 
 // Get a list of commands a user can make
 async function getCommands() {
@@ -27,6 +27,9 @@ async function performRequest(option, data) {
         body: JSON.stringify(data)
     });
     const json = await result.json();
+    if(!result.ok) {
+        throw new Error(json.error);
+    }
     return json;
 }
 

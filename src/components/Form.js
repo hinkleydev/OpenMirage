@@ -15,6 +15,7 @@ function Form({data, setData}) {
         for(let index = 0; index < argumentLength; index++) {
             formObject[formData.target[index].placeholder] = formData.target[index].value;
         }
+        const oldData = data; // Just in case the request fails
         setData([...data, {title: cardTitle, content: "Loading..."}]);
         performRequest(selectedCommand, formObject).then(newCard => {
             newCard.title = cardTitle;
@@ -22,7 +23,10 @@ function Form({data, setData}) {
             newCard.error = newCard.code != undefined; // If there is an error, set the error flag. There will be a code if there is an error
             setCardTitle(selectedCommand + " #" + (data.length + 2)); // Because an extra card is just about to be added to the list, we need to add one more
             setData([...data, newCard]);
-        })
+        }).catch(error => {
+            setData(oldData); // Reset the data if the request fails
+            alert("Something went wrong, please check all the right arguments were selected");
+        });
     }
 
     // Get a list of arguments for the chosen command
