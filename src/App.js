@@ -15,6 +15,7 @@ function App() {
   const [collapsed, setCollapsed] = useState(false); // Summary collapsed state
   const [summaryWidth, setSummaryWidth] = useState(20); // Summary width
   const [cardsWidth, setCardsWidth] = useState(80); // Cards width
+  const [printMode, setPrintMode] = useState(false); // Print mode for the cards
 
   useEffect(() => {
     if (collapsed) {
@@ -38,11 +39,22 @@ function App() {
     element.focus();
   }
 
+  if(printMode) {
+    return (<div className="print-container">
+      <h1>OpenMirage report</h1>
+      <button className="print" onClick={() => setPrintMode(false)}>Close</button>
+      {data.map(function(item, index) {
+            return <><h2>{item.title}</h2><div>{item.content}</div></>;
+      })}
+    </div>)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <h1 style={{margin: 0}} >OpenMirage</h1>
         <button className="toggle-summary" onClick={() => setCollapsed(!collapsed)}>Toggle Summary</button>
+        <button className="print" onClick={() => setPrintMode(true)}>Print</button>
       </header>
       <div className="content-container">
         <div className="summary-container" style={{width: summaryWidth  + "%"}}>

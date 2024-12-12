@@ -140,7 +140,7 @@
   justify-content: left;
 }
 
-.card-buttons > button, .toggle-summary {
+.card-buttons > button, .toggle-summary, .print {
   margin: 0 0.1rem;
   background-color: #61dafb;
   color: #282c34;
@@ -167,4 +167,8 @@
   50% {
     transform: scale(2);
   }
+}
+
+.print-container > div {
+  white-space: pre-line;
 }
