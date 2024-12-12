@@ -16,7 +16,7 @@ app.use(morgan('dev'))
 app.use(express.json())
 
 // serve up static files (e.g. html and css files)
-app.use(express.static(path.join(__dirname, '../build')))
+app.use(express.static(path.join(__dirname, 'src')))
 
 // api router
 app.use('/requests', require('./routes'))
