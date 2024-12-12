@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+// eslint-disable-next-line
 import logo from './logo.svg';
 import './App.css';
 import Block from './components/Block';
@@ -53,7 +54,7 @@ function App() {
       <button className="print" onClick={() => window.print()}>Print</button>
       {data.map(function(item, index) {
             return (<>
-                <h2>{item.title} {item.error == true ? "- Error" : null}</h2>
+                <h2>{item.title} {item.error === true ? "- Error" : null}</h2>
                 <h3>Context</h3>
                 <div>{printContext(item.context)}</div>
                 <h3>Content</h3>
@@ -85,7 +86,7 @@ function App() {
         <div className="cards-container" style={{width: cardsWidth  + "%"}}>
           { /* Create a list of cards for the card display */ }
           {data.map(function(item, index) {
-            return <Block id={"card_" + index} key={"card_" + index} title={item.title} content={item.content} context={item.context} deleteCard={() => deleteCard(index)} error={item.error}/>;
+            return <Block id={"card_" + index} key={"card_" + index} card={item} deleteCard={() => deleteCard(index)}/>;
           })}
         </div>
       </div>

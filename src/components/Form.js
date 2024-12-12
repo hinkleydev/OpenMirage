@@ -21,7 +21,7 @@ function Form({data, setData}) {
             newCard.title = cardTitle;
             newCard.content = newCard.result;
             newCard.context = formObject; // Save the context of the request
-            newCard.error = newCard.code != undefined; // If there is an error, set the error flag. There will be a code if there is an error
+            newCard.error = newCard.code !== undefined; // If there is an error, set the error flag. There will be a code if there is an error
             setCardTitle(selectedCommand + " #" + (data.length + 2)); // Because an extra card is just about to be added to the list, we need to add one more
             setData([...data, newCard]);
         }).catch(error => {
@@ -32,7 +32,7 @@ function Form({data, setData}) {
 
     // Get a list of arguments for the chosen command
     async function retrieveArguments(option) { // Running out of naming options here!
-        if(option == "Select an option") {
+        if(option === "Select an option") {
             setArguments([]);
             return; // Clear arguments and return so we don't error
         }
@@ -43,7 +43,7 @@ function Form({data, setData}) {
         })
     }
 
-    useEffect(function() {
+    useEffect(function() { // On page load, get the list of commands
         getCommands().then(options => {
             setCommands(options)
         });

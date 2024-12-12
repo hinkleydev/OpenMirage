@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-function Block({ title, deleteCard, content, context, error, id }) {
-    let classes = content === "Loading..." ? "loading card" : "card";
-    classes += error ? " error" : ""; // Add error class if there is an error
+function Block({ card, deleteCard, id }) {
+    let classes = card.content === "Loading..." ? "loading card" : "card";
+    classes += card.error ? " error" : ""; // Add error class if there is an error
     const [viewMode, setViewMode] = useState(1); // Set the view size
     const [viewContext, setViewContext] = useState(false); // Set view the context
 
@@ -14,12 +14,12 @@ function Block({ title, deleteCard, content, context, error, id }) {
 
     return (
         <div id={id} className={classes} style={{ gridColumn: "span " + viewMode }} tabIndex="-0">
-            <h3 title={title}>
-                {title}
+            <h3 title={card.title}>
+                {card.title}
             </h3>
             <div className="result-content">
-                {viewContext == true ? <div className="context">{JSON.stringify(context)}</div> : content}
-                {content === "Loading..." ? <div className="loading-symbol"></div> : null}
+                {viewContext === true ? <div className="context">{JSON.stringify(card.context)}</div> : card.content}
+                {card.content === "Loading..." ? <div className="loading-symbol"></div> : null}
             </div>
             <div className="card-buttons">
                 <button onClick={deleteCard}>X</button> {/* Delete card */}
