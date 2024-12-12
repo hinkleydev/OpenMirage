@@ -172,3 +172,9 @@
 .print-container > div {
   white-space: pre-line;
 }
+
+@media print {
+  .print {
+    display: none;
+  }
+}

@@ -50,6 +50,7 @@ function App() {
     return (<div className="print-container">
       <h1>OpenMirage report</h1>
       <button className="print" onClick={() => setPrintMode(false)}>Close</button>
+      <button className="print" onClick={() => window.print()}>Print</button>
       {data.map(function(item, index) {
             return (<>
                 <h2>{item.title} {item.error == true ? "- Error" : null}</h2>
