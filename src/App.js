@@ -44,7 +44,7 @@ function App() {
       <h1>OpenMirage report</h1>
       <button className="print" onClick={() => setPrintMode(false)}>Close</button>
       {data.map(function(item, index) {
-            return <><h2>{item.title}</h2><div>{item.content}</div></>;
+            return <><h2>{item.title} {item.error == true ? "- Error" : null}</h2><div>{item.content}</div></>;
       })}
     </div>)
   }
