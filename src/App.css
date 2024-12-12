@@ -36,6 +36,8 @@
   overflow-y: scroll;
 }
 
+/* Contains the add card form */
+
 .add-card {
   height: 30%;
   overflow-y: scroll;
@@ -168,6 +170,8 @@
     transform: scale(2);
   }
 }
+
+/* Printer page CSS */
 
 .print-container > div {
   white-space: pre-line;
