@@ -20,6 +20,7 @@ function Form({data, setData}) {
         performRequest(selectedCommand, formObject).then(newCard => {
             newCard.title = cardTitle;
             newCard.content = newCard.result;
+            newCard.context = formObject; // Save the context of the request
             newCard.error = newCard.code != undefined; // If there is an error, set the error flag. There will be a code if there is an error
             setCardTitle(selectedCommand + " #" + (data.length + 2)); // Because an extra card is just about to be added to the list, we need to add one more
             setData([...data, newCard]);

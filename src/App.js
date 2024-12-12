@@ -39,12 +39,25 @@ function App() {
     element.focus();
   }
 
+  function printContext(context) {
+    const keys = Object.keys(context);
+    return keys.map(function(key) {
+      return <div>{key}: {context[key]}</div>;
+    });
+  }
+
   if(printMode) {
     return (<div className="print-container">
       <h1>OpenMirage report</h1>
       <button className="print" onClick={() => setPrintMode(false)}>Close</button>
       {data.map(function(item, index) {
-            return <><h2>{item.title} {item.error == true ? "- Error" : null}</h2><div>{item.content}</div></>;
+            return (<>
+                <h2>{item.title} {item.error == true ? "- Error" : null}</h2>
+                <h3>Context</h3>
+                <div>{printContext(item.context)}</div>
+                <h3>Content</h3>
+                <div>{item.content}</div>
+              </>);
       })}
     </div>)
   }
