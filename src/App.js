@@ -76,7 +76,7 @@ function App() {
             <ul>
               {/* Create a short list for a summary display */}
               {data.map(function(item, index) {
-                return <li key={"sum_" + index} onClick={(event) => focusCard("card_" + index, event) }>{item.title}</li>;
+                return <li key={"sum_" + index} onClick={(event) => focusCard("card_" + index, event) } title={item.title}>{item.title}</li>;
               })}
             </ul>
           </div>
