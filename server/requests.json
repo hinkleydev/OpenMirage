@@ -1,11 +1,8 @@
 {
     "options": [
-        {"GET": "curl --no-progress-meter -f -X GET {url}"},
-        {"system": "uname -a"},
         {"gituser" : "curl https://api.github.com/users/{username} -s | sed s/,// | grep -e location -e '\\\"name'"},
-        {"echo" : "echo {first} {second} {third} {fourth} {fifth}"},
-        {"sleep":"sleep {time} && echo Done!"},
         {"ping":"ping {host} > NUL && echo {host} online || echo {host} offline"},
-        {"nmap": "nmap {host} -oG - --noninteractive"}
+        {"ports": "\"C:\\Program Files (x86)\\Nmap\\nmap.exe\" --unprivileged {host} -Pn -p{ports} | tail -n+5 | head -n-1"},
+        {"HEAD": "curl {host} -s -I"}
     ]
 }
