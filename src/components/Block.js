@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-function Block({ title, deleteCard, content, error, id }) {
+function Block({ title, deleteCard, content, context, error, id }) {
     let classes = content === "Loading..." ? "loading card" : "card";
     classes += error ? " error" : ""; // Add error class if there is an error
     const [viewMode, setViewMode] = useState(1); // Set the view size
+    const [viewContext, setViewContext] = useState(false); // Set view the context
 
     useEffect(() => {
         if (viewMode < 1) {
@@ -17,13 +18,14 @@ function Block({ title, deleteCard, content, error, id }) {
                 {title}
             </h3>
             <div className="result-content">
-                {content}
+                {viewContext == true ? <div className="context">{JSON.stringify(context)}</div> : content}
                 {content === "Loading..." ? <div className="loading-symbol"></div> : null}
             </div>
             <div className="card-buttons">
                 <button onClick={deleteCard}>X</button> {/* Delete card */}
                 <button onClick={() => setViewMode(viewMode - 1)}>-</button> {/* Shrink view */}
                 <button onClick={() => setViewMode(viewMode + 1)}>+</button> {/* Enlarge view */}
+                <button onClick={() => setViewContext(!viewContext)}>?</button> {/* Toggle context */}
             </div>
         </div>
     );
