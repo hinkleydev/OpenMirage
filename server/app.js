@@ -15,11 +15,11 @@ app.use(morgan('dev'))
 // parsing middleware for form input data & json
 app.use(express.json())
 
-// serve up static files (e.g. html and css files)
-app.use(express.static(path.join(__dirname, 'src')))
-
 // api router
 app.use('/requests', require('./routes'))
+
+// serve up static files (e.g. html and css files)
+app.use(express.static(path.join(__dirname, '../build')))
 
 // 404 handler
 app.use((req, res) => {
