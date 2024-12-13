@@ -4,6 +4,6 @@
         {"head": "curl {url} -s -I"},
         {"whois": "whois {domain}"},
         {"nslookup": "nslookup {domain} 2>&1"},
-        {"ssh_version":"nc {host} -i 3 2> /dev/null"}
+        {"ssh_version":"nc {host} 22 -w 3"}
     ]
 }
