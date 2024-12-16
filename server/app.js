@@ -2,15 +2,11 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const morgan = require('morgan')
 const path = require('path')
 const cors = require('cors')
 
 // Allow CORS requests
 app.use(cors())
-
-// logging middleware
-app.use(morgan('dev'))
 
 // parsing middleware for form input data & json
 app.use(express.json())

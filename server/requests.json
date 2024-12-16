@@ -1,6 +1,6 @@
 {
     "options": [
-        {"ping": "ping {host} -c 1 > /dev/null && echo {host} online || echo {host} offline"},
+        {"ping": "ping {host}"},
         {"head": "curl {url} -s -I"},
         {"ssh_version": "bash -c 'echo `nc {host} 22 -i 3`'"},
         {"ftp_version": "bash -c 'echo `nc {host} 21 -i 1`'"}
