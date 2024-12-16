@@ -23,7 +23,7 @@ https.get(options, (res) => {
         if (onlyTags[0] == config.version) {
             console.log(`Version ${config.version} is up to date.`);
         } else {
-            console.log(`Version ${config.version} is out of date. Latest version is ${onlyTags[0]}.`);
+            console.log(`Version ${config.version} is out of date. Latest version is ${onlyTags[0]}. Update by running 'npm update'`);
         }
     });
 }).on('error', (e) => {
