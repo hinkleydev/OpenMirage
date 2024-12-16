@@ -40,7 +40,7 @@ function Form({data, setData}) {
                 setCommands(options)
                 setArguments([]);
                 setSelectedCommand();
-                setCardTitle();
+                setCardTitle("");
                 setArguments([]);
             });
             return;
