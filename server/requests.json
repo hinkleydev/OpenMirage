@@ -2,7 +2,7 @@
     "options": [
         {"ping": "ping {host} -c 1 > /dev/null && echo {host} online || echo {host} offline"},
         {"head": "curl {url} -s -I"},
-        {"ssh_version": "nc {host} 22 -w 3"},
-        {"ftp_version": "nc {host} 21 -w 3"}
+        {"ssh_version": "bash -c 'echo `nc {host} 22 -i 3`'"},
+        {"ftp_version": "bash -c 'echo `nc {host} 21 -i 1`'"}
     ]
 }
