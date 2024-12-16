@@ -1,9 +1,8 @@
 {
     "options": [
-        {"ping":"ping {host} > /dev/null && echo {host} online || echo {host} offline"},
+        {"ping": "ping {host} -c 1 > /dev/null && echo {host} online || echo {host} offline"},
         {"head": "curl {url} -s -I"},
         {"ssh_version": "nc {host} 22 -w 3"},
-        {"ftp_version": "nc {host} 21 -w 3"},
-        {"asd": "echo"}
+        {"ftp_version": "nc {host} 21 -w 3"}
     ]
 }
