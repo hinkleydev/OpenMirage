@@ -20,7 +20,6 @@ https.get(options, (res) => {
     res.on('end', () => {
         const releases = JSON.parse(data);
         const releaseNames = releases.map(release => release.name);
-        console.log(releaseNames)
         if (releaseNames[0] == config.version) {
             console.log(`Version ${config.version} is up to date.`);
         } else {
