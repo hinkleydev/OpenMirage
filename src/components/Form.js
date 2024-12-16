@@ -35,6 +35,15 @@ function Form({data, setData}) {
         if(option === "Select an option") {
             setArguments([]);
             return; // Clear arguments and return so we don't error
+        } else if (option === "Refresh commands") { // Refresh commands and clear fields
+            getCommands().then(options => {
+                setCommands(options)
+                setArguments([]);
+                setSelectedCommand();
+                setCardTitle();
+                setArguments([]);
+            });
+            return;
         }
         setSelectedCommand(option);
         setCardTitle(option + " #" + (data.length + 1));
@@ -56,6 +65,7 @@ function Form({data, setData}) {
             {commands.map(function(comand) {
                 return <option>{comand}</option>;
             })}
+            <option>Refresh commands</option>
         </select><br />
         <label for="card-title">Card title</label>
         <br />
