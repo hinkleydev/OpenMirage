@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "node start.js && nodemon server.js",
-    "update": "git https://github.com/hinkleydev/OpenMirage && npm install"
+    "update": "git pull https://github.com/hinkleydev/OpenMirage && npm install"
   },
   "eslintConfig": {
     "extends": [
