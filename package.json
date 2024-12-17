@@ -18,8 +18,7 @@
   "scripts": {
     "start": "run-p run view",
     "run": "node start.js && nodemon server.js",
-    "view": "explorer http://localhost:7172 &",
-    "update": "git pull https://github.com/hinkleydev/OpenMirage && npm install && npx react-scripts build"
+    "view": "explorer http://localhost:7172 &"
   },
   "eslintConfig": {
     "extends": [
