@@ -9,7 +9,7 @@ To start the app, run `npm start` from the project folder. Your browser window w
 ## Adding functions
 Functions are stored in the `server/requests.json` file.
 ```
-{"head" : "curl {url} -S -I"}
+{"head" : "curl {url} -s -S -I"}
 ```
 The format takes advantage of the UNIX philosophy, that every program has one function and expects to be the output of another. If the command returns `0`, then the server will respond with the STDOUT. If the program responds with a non `0` code, the server will respond with the STDERR, and highlight the box in red to indicate an error.
 
