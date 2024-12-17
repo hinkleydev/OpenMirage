@@ -1,7 +1,7 @@
 {
     "options": [
         {"ping": "ping {host}"},
-        {"head": "curl {url} -s -I"},
+        {"head": "curl {url} -s -S -I"},
         {"ssh_version": "bash -c 'echo `nc {host} 22 -i 3`'"},
         {"ftp_version": "bash -c 'echo `nc {host} 21 -i 1`'"}
     ]
