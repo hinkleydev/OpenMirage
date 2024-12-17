@@ -2,7 +2,7 @@
     "options": [
         {"ping": "ping {host}"},
         {"head": "curl {url} -s -S -I"},
-        {"ssh_version": "bash -c 'echo `nc {host} 22 -i 3`'"},
-        {"ftp_version": "bash -c 'echo `nc {host} 21 -i 1`'"}
+        {"ssh_version": "nc {host} 22 -i 3 | grep SSH- || echo No server reported"},
+        {"ftp_version": "nc {host} 21 -i 3 | grep 220 || echo No server reported"}
     ]
 }
